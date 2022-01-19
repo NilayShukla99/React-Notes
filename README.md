@@ -1,3 +1,2 @@
 # React-Notes
-A React Webapp for Notes - deployed with netlify
-have a look -> https://reactapp-notes.netlify.app/
+A React Webapp for Notes - deployed with netlify -> https://reactapp-notes.netlify.app/
