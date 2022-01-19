@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background: #e6e6e6cb;
+  --borderColor: #f0bca9;
+}
+.wraper {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--borderColor);
+  background-color: #fafafa;
+  padding: 10px;
+  width: 60%;
+  max-width: 390px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #a8a8a87a, 0 10px 20px #c5c5c57a,
+    0 15px 25px var(--background);
+  overflow-x: hidden;
+}
+.greet h1 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+section h3 {
+  text-align: center; /*to center text in h3*/
+  margin: 0 auto;
+  width: max-content;
+  position: relative;
+}
+section h3:after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  bottom: 0px;
+  left: 0;
+  z-index: -1;
+  background-color: var(--borderColor);
+  position: absolute;
+}
+#sectionPanel {
+  width: 100%;
+  height: 290px;
+  display: flex;
+}
+section {
+  position: absolute;
+  width: 90%;
+  padding: 5px;
+  margin: 10px;
+  transition: 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) all;
+}
+section:first-child {
+  left: 0;
+}
+section:last-child {
+  left: 100%;
+  margin-left: 12px;
+}
+section.logIn.active {
+  left: -100%;
+}
+section.signUp.active {
+  left: 0;
+}
+section .inputFld {
+  margin: 10px;
+}
+section .inputFld input {
+  font-weight: 500;
+  font-size: 17.5px;
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(218, 212, 210, 0.308);
+}
+section .inputFld input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+section .inputFld.nameFld {
+  display: flex;
+  justify-content: space-between;
+}
+.inputFld.nameFld input {
+  flex: 1;
+}
+.inputFld.nameFld input:first-child {
+  margin-right: 10px;
+}
+section .btn {
+  width: 30%;
+  padding: 5px;
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px solid rgb(240, 188, 169);
+  border-radius: 5px;
+}
+section p {
+  margin: 10px;
+  color: black;
+}
+section.logIn + p {
+  position: absolute;
+  bottom: 10px;
+}
+#linkToSignUp {
+  position: relative;
+  display: inline-block;
+  color: teal;
+  text-decoration: none;
+  cursor: pointer;
+}
+#linkToSignUp:focus {
+  border: 2px solid #000;
+}
+#linkToSignUp:after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background-color: teal;
+}
+/* section#signUp {
+  display: none;
+}
+section#signUp:target {
+  display: block;
+} */

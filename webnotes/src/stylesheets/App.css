@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background-color: aquamarine;
+}
+body {
+  width: 100vw;
+}
+main {
+  display: grid;
+  width: 100%;
+}
+main h2 + img {
+  filter: hue-rotate(296deg);
+}
+
+#emptyMessage {
+  margin-top: 25px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(61, 61, 61);
+}
+#emptyMessage span {
+  color: rgb(156, 156, 156);
+}
+#emptyMessage img {
+  margin-top: 10px;
+}
+#emptyMessage h3 {
+  margin: 25px auto 0;
+  width: 300px;
+}
+
+.container {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-rows: repeat(auto-fit, 1fr);
+  justify-items: center;
+  grid-gap: 20px; */
+  width: 70%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  column-count: 3;
+}
+
+/* styling header portion */
+header {
+  background-color: rgba(233, 231, 231, 0.568);
+  backdrop-filter: blur(7px);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 90px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Comfortaa", cursive;
+}
+header .siteTitle {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: inherit;
+  pointer-events: none;
+}
+header .siteTitle a {
+  text-decoration: none;
+  color: #000;
+}
+header .siteTitle a:visited {
+  color: #000;
+}
+header .searchBar {
+  position: relative;
+  width: 210px;
+  height: 40px;
+  transition: 0.4s;
+  font-family: inherit;
+}
+header .searchBar i.fa-filter {
+  color: rgba(192, 192, 192, 0.521);
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+header .searchBar i.fa-filter:after {
+  content: "|";
+  color: lightGray;
+  font-weight: 300;
+  font-size: 21px;
+  margin-left: 3px;
+}
+header .searchBar input::placeholder {
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+header .searchBar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px lightgray;
+  padding: 0 10px 0 35px;
+  line-height: 20px;
+  font-size: 16px;
+  transition: 0.4s;
+}
+header .searchBar input:is(:hover, :focus, :not(:placeholder-shown)) {
+  width: 270px;
+  border: 2px solid rgb(248, 157, 123);
+}
+
+header button {
+  position: absolute;
+  top: 100px;
+  right: 5%;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgb(149, 149, 149), 0 0 15px #8b8b8b50;
+  border: none;
+  font-size: inherit;
+  width: 70px;
+  background-color: #ffffff;
+}
+header button.signOut {
+  top: 20px;
+  width: fit-content;
+}
+header input[type="date"] {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 3px rgb(149, 149, 149), 0 0 15px #8b8b8b50;
+  position: absolute;
+  right: 27%;
+  padding: 2px;
+  width: 50px;
+  border: none;
+  border-radius: 10px;
+}
+
+header .signIn img {
+  position: relative;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid lightgray;
+  background-color: rgb(221, 221, 221);
+}
+header .signIn #userName {
+  position: absolute;
+  bottom: 0px;
+  right: 10%;
+  font-size: 20px;
+}
+header button {
+  margin-top: 5px;
+}
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1150px) {
+  .container {
+    column-count: 2;
+    /* background-color: lightblue; */
+    width: 75%;
+  }
+  header .signIn #userName {
+    right: 15%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .container {
+    column-count: 2;
+    /* background-color: lightpink; */
+    width: 70%;
+  }
+  header .signIn {
+    padding: 25px;
+  }
+  header {
+    height: 100px;
+    padding-bottom: 50px;
+  }
+  header .searchBar {
+    position: absolute;
+    bottom: -10px;
+    height: 45px;
+    width: 230px;
+  }
+  header input[type="date"] {
+    top: 75px;
+    right: 28.5%;
+    border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 2rem 15px;
+    width: 100%;
+    /* column-count: 1; */
+  }
+  header .searchBar input:is(:hover, :focus, :not(:placeholder-shown)) {
+    width: 230px;
+  }
+  header input[type="date"] {
+    top: 65px;
+    right: 6%;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  header input[type="date"]:after {
+    content: "📅";
+    position: relative;
+    right: 25px;
+  }
+  header button {
+    top: 135px;
+  }
+}
